@@ -8,9 +8,10 @@ const WelcomePage = () => {
 
   return (
     <div className="welcome-container">
-      <video autoPlay loop muted>
-        <source src={require('../image/welcome.mp4')} type="video/mp4" />
-      </video>
+   <video autoPlay loop muted>
+  <source src="/welcome.mp4" type="video/mp4" />
+</video>
+
 
       <div className="button-container">
         <Link to="/login" className="welcome-btn">{t('login_button')}</Link>
