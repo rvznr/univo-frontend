@@ -1,0 +1,112 @@
+
+.about {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    padding: 160px 20px 80px;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-container {
+    max-width: 960px;
+    width: 100%;
+    color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .about-box {
+    background-color: rgba(27, 27, 47, 0.9);
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease;
+  }
+  
+  .about-container h2 {
+    font-size: 2.5rem;
+    color: #5ac8fa;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-shadow: 0 0 10px rgba(90, 200, 250, 0.4);
+  }
+  
+  .about-container hr {
+    width: 80px;
+    height: 4px;
+    margin: 0 auto 24px;
+    background: #5ac8fa;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .about-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .vision-mission {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  
+  .vision, .mission {
+    background-color: #1c1c2e;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #5ac8fa;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease;
+  }
+  
+  .vision h3, .mission h3 {
+    font-size: 1.6rem;
+    color: #5ac8fa;
+    margin-bottom: 12px;
+  }
+  
+  .vision p, .mission p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.7;
+    text-align: justify;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (max-width: 768px) {
+    .about-box {
+      padding: 28px 20px;
+    }
+  
+    .about-container h2 {
+      font-size: 2rem;
+    }
+  
+    .about-container p {
+      font-size: 1rem;
+    }
+  
+    .vision h3, .mission h3 {
+      font-size: 1.3rem;
+    }
+  
+    .vision p, .mission p {
+      font-size: 0.95rem;
+    }
+  }
+  

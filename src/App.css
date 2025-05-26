@@ -1,0 +1,64 @@
+/* Global stil resetleme */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY STİLİ (GENEL STİL) */
+body {
+  background-color: #f4f4f9;
+  color: #333; /* Metin rengi */
+  font-family: 'JetBrains Mono', monospace; /* IT temalı font */
+  margin: 0;
+}
+
+/* CARD-LIKE CONTAINERS */
+.dashboard-card,
+.profile-card,
+.module-card,
+.chart-card,
+.quiz-card,
+.note-reader,
+.exercise-page,
+.quiz-result {
+  border-radius: 18px;
+  font-family: 'Tomorrow', sans-serif;
+}
+
+/* ICON ADJUSTMENTS */
+.material-icons {
+  font-size: 1.4rem;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+
+
+/* Ensure main containers start below navbar */
+.dashboard-container,
+.learnhub,
+.profile-page,
+.games-page,
+.quiz-selection,
+.quiz-page,
+.note-page,
+.exercise-page {
+  padding-top: 90px !important;
+}
+
+
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.75rem;
+    padding: 12px 8px;
+  }
+}
+
+/* APP LAYOUT */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

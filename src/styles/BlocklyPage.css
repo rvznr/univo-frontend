@@ -1,0 +1,101 @@
+/* BlocklyPage.css */
+.blockly-page {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #eef6fb, #ffffff);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  h2 {
+    color: #2d709f;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .blockly-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .blockly-controls select {
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .blockly-workspace {
+    height: 480px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 1.5rem auto;
+    border: 2px solid #2d709f;
+    border-radius: 1rem;
+    background-color: #ffffff;
+  }
+  
+  .blockly-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .blockly-buttons button {
+    background-color: #2d709f;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .blockly-buttons button:hover {
+    background-color: #1f567b;
+  }
+  
+  .code-output {
+    background: #f4fbff;
+    color: #1f567b;
+    border: 1px solid #2d709f;
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+  }
+  
+  .blockly-help {
+    background-color: #f0faff;
+    border: 1px solid #2d709f;
+    border-radius: 1rem;
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .blockly-help h4 {
+    color: #2d709f;
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .blockly-workspace {
+      height: 360px;
+    }
+  
+    .blockly-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }

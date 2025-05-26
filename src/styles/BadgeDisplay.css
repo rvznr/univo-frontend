@@ -1,0 +1,101 @@
+.badge-display-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.scroll-btn {
+  background-color: #2d709f;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s;
+}
+
+.scroll-btn:hover {
+  background-color: #1c4c6e;
+}
+
+.scroll-btn.left {
+  margin-right: 8px;
+}
+
+.scroll-btn.right {
+  margin-left: 8px;
+}
+
+.badge-scroll-container {
+  display: flex;
+  overflow-x: hidden;
+  gap: 16px;
+  scroll-behavior: smooth;
+  flex-grow: 1;
+  padding: 8px 0;
+}
+
+.badge-card {
+  min-width: 200px;
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.badge-img {
+  width: 64px;
+  height: 64px;
+}
+
+.badge-placeholder {
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px dashed #64748b;
+  background-color: #334155;
+}
+
+.badge-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.badge-desc {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-top: 4px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .badge-card {
+    min-width: 160px;
+    padding: 12px;
+  }
+
+  .badge-name {
+    font-size: 0.95rem;
+  }
+
+  .badge-desc {
+    font-size: 0.8rem;
+  }
+
+  .scroll-btn {
+    font-size: 1.5rem;
+    width: 36px;
+    height: 36px;
+  }
+}

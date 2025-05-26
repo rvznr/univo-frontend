@@ -1,0 +1,61 @@
+.games-page {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .games-page h2 {
+    font-size: 2rem;
+    color: #2d709f;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .game-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .game-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+  }
+  
+  .game-description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .play-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background-color: #2d709f;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .play-button:hover {
+    background-color: #245b80;
+  }
+  

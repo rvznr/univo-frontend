@@ -1,0 +1,226 @@
+.quiz-result {
+  width: 80%;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  animation: popIn 0.5s ease-out;
+}
+.info-box {
+  margin-top: 1.5rem; 
+  margin-bottom: 1rem;
+  background-color: #fffbe6;
+  border-left: 4px solid #f0c36d;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #7a5a00;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .info-box {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+    margin-top: 1.2rem;
+  }
+}
+
+
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.quiz-result h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #2d709f;
+  font-weight: bold;
+  animation: bounceIn 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@keyframes bounceIn {
+  0% { transform: translateY(-20px); opacity: 0; }
+  60% { transform: translateY(10px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.quiz-result p {
+  font-size: 1.2rem;
+  margin: 0.7rem 0;
+  color: #333;
+}
+
+.xp-earned-box {
+  margin: 1.5rem auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  padding: 1rem 2rem;
+  border: 2px solid #00bcd4;
+  border-radius: 1rem;
+  color: #007c91;
+  font-weight: 600;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 18px rgba(0, 188, 212, 0.15);
+  animation: pulseXP 1.2s infinite ease-in-out;
+}
+
+.xp-icon {
+  font-size: 1.6rem;
+}
+
+@keyframes pulseXP {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.result-details {
+  margin-top: 2rem;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.result-table th, .result-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.correct-row {
+  background-color: #e6ffed; 
+}
+
+.wrong-row {
+  background-color: #ffe6e6; 
+}
+
+.explanation-cell {
+  background-color: #f4f9ff;
+  font-style: italic;
+  padding: 12px;
+  text-align: left;
+  color: #444;
+  border-top: none;
+  border-left: 4px solid #2d709f;
+  font-size: 0.95rem;
+}
+
+.quiz-result button {
+  margin-top: 2rem;
+  padding: 0.8rem 1.7rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, #2d709f, #45a7d3);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(45, 112, 159, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-result button::after {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  transition: right 0.3s;
+}
+
+.quiz-result button:hover {
+  background: linear-gradient(135deg, #1e5b7c, #339ec4);
+  transform: scale(1.02);
+}
+
+.quiz-result button:hover::after {
+  right: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .quiz-result {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .quiz-result h2 {
+    font-size: 1.6rem;
+  }
+
+  .quiz-result p {
+    font-size: 1rem;
+  }
+
+  .quiz-result button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+.recommended-question-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 2px dashed #2d709f;
+  border-radius: 1rem;
+  background-color: #f0f8ff;
+  text-align: left;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.recommended-question-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #2d709f;
+}
+
+.recommended-question-box p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.option-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+}
+
+.option-list li {
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 1px solid #cfe7ff;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.option-list li:hover {
+  background-color: #e8f4ff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

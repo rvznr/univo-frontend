@@ -1,0 +1,129 @@
+.quiz-page {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+}
+
+.question-card {
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.question-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #4b8cff;
+  font-weight: bold;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.option-btn {
+  padding: 1rem 1.25rem;
+  background-color: #4b8cff;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.option-btn:hover {
+  background-color: #3a7ae1;
+}
+
+.option-btn.selected {
+  background-color: #2a61a4;
+  border: 2px solid #ffbb33;
+  font-weight: bold;
+}
+
+.quiz-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.quiz-nav-buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: #4b8cff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.quiz-nav-buttons button:hover:not(:disabled) {
+  background-color: #3a7ae1;
+}
+
+.quiz-nav-buttons button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fcd9be; 
+  background-color: #d04420; 
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media (max-width: 600px) {
+  .option-btn {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  .quiz-nav-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quiz-nav-buttons button {
+    width: 100%;
+  }
+
+  .question-card {
+    padding: 1.25rem;
+  }
+
+  .timer {
+    font-size: 1.25rem; 
+    padding: 0.4rem 0.8rem;
+  }
+}

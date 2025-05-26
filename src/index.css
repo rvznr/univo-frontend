@@ -1,0 +1,9 @@
+/* Tarayıcı varsayılan margin sıfırlaması */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
