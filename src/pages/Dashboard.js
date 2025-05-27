@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Dashboard.css';
 import BadgeDisplay from '../components/BadgeDisplay';
-import XPProgressBar from '../components/XPProgressBar';
+//import XPProgressBar from '../components/XPProgressBar';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 import { useTranslation } from 'react-i18next';
@@ -144,7 +144,6 @@ const Dashboard = () => {
         {userName ? t("dashboard_of", { name: userName.toUpperCase() }) : t("dashboard_title")}
       </h2>
 
-      <XPProgressBar />
 
       <div className="dashboard-cards">
         <div className="dashboard-card xp-card">
