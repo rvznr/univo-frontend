@@ -9,7 +9,8 @@ const api = axios.create({
     ...(token && { Authorization: `Bearer ${token}` })
   },
   withCredentials: true
-});
+}); 
+// 1223
 
 
 // Her istekten önce localStorage'dan token güncelle
