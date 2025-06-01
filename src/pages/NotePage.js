@@ -17,7 +17,7 @@ function NotePage() {
   const serverBaseUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
   useEffect(() => {
-    api.get(`/notes/${noteId}`, {
+    api.get(`/api/notes/${noteId}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }

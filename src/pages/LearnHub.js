@@ -64,7 +64,14 @@ function LearnHub() {
           navigate(`/note/${noteId}`);
         }, 300);
       })
-      .catch(err => console.error("❌ Failed to save XP:", err));
+     .catch(err => {
+  if (err.response) {
+    console.error("❌ Failed to save XP:", err.response.status, err.response.data);
+  } else {
+    console.error("❌ Unknown XP save error:", err.message);
+  }
+});
+
   };
 
   return (
