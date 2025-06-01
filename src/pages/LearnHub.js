@@ -18,8 +18,9 @@ function LearnHub() {
       const token = localStorage.getItem('token');
       try {
         const [modRes, progressRes] = await Promise.all([
-          api.get('/modules', { headers: { Authorization: `Bearer ${token}` } }),
-          api.get('/user/progress/mine', { headers: { Authorization: `Bearer ${token}` } })
+        api.get('/api/modules', { headers: { Authorization: `Bearer ${token}` } }),
+        api.get('/api/user/progress/mine', { headers: { Authorization: `Bearer ${token}` } })
+
         ]);
 
         setModulesData(modRes.data);
