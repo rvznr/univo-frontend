@@ -15,12 +15,10 @@ function LearnHub() {
 
   useEffect(() => {
     const fetchModulesAndProgress = async () => {
-      const token = localStorage.getItem('token');
       try {
         const [modRes, progressRes] = await Promise.all([
-        api.get('/modules', { headers: { Authorization: `Bearer ${token}` } }),
-        api.get('/user/progress/mine', { headers: { Authorization: `Bearer ${token}` } })
-
+          api.get('/modules'),
+          api.get('/user/progress/mine')
         ]);
 
         setModulesData(modRes.data);
@@ -28,7 +26,6 @@ function LearnHub() {
         const totalLearnXP = progressRes.data.reduce((acc, p) => {
           return acc + (p.xp_from_notes || 0) + (p.xp_from_exercises || 0);
         }, 0);
-
         setTotalXP(totalLearnXP);
       } catch (err) {
         console.error("❌ Error fetching modules or progress:", err);
@@ -64,14 +61,13 @@ function LearnHub() {
           navigate(`/note/${noteId}`);
         }, 300);
       })
-     .catch(err => {
-  if (err.response) {
-    console.error("❌ Failed to save XP:", err.response.status, err.response.data);
-  } else {
-    console.error("❌ Unknown XP save error:", err.message);
-  }
-});
-
+      .catch(err => {
+        if (err.response) {
+          console.error("❌ Failed to save XP:", err.response.status, err.response.data);
+        } else {
+          console.error("❌ Unknown XP save error:", err.message);
+        }
+      });
   };
 
   return (
