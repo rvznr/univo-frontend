@@ -17,8 +17,8 @@ function LearnHub() {
     const fetchModulesAndProgress = async () => {
       try {
         const [modRes, progressRes] = await Promise.all([
-          api.get('/modules'),
-          api.get('/user/progress/mine')
+          api.get('/api/modules'),
+          api.get('/api/user/progress/mine')
         ]);
 
         setModulesData(modRes.data);
