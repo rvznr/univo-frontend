@@ -81,8 +81,7 @@ function NotePage() {
   .replace(/src="\/static\/images\//g, `src="${serverBaseUrl}/static/images/`)
   .replace(/src="\/api\/images\/(?!by-name)/g, `src="${serverBaseUrl}/api/images/by-name/`)
   .replace(/src="\/(?!\/)/g, `src="${serverBaseUrl}/`)
-  .replace(/src="(image_[^"]+\.png)"/g, `src="${serverBaseUrl}/api/images/by-name/$1"`); // burayı ekle
-
+  .replace(/src="(image_[^"]+\.png)"/g, `src="${serverBaseUrl}/api/images/by-name/$1"`);
   }
 
   return (
