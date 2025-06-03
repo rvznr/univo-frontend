@@ -14,7 +14,7 @@ function ExercisePage() {
   const [hasAlreadySolved, setHasAlreadySolved] = useState(false); 
 
   useEffect(() => {
-    api.get(`/module-exercises/${moduleId}`)
+    api.get(`/api/module-exercises/${moduleId}`)
       .then(res => {
         const exercises = res.data.exercises || [];
         let allQs = [];
@@ -63,7 +63,7 @@ function ExercisePage() {
 
     
     const token = localStorage.getItem('token');
-    api.get(`/user/progress/mine`, {
+    api.get(`/api/user/progress/mine`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => {
       const found = res.data.find(p => parseInt(p.module_id) === parseInt(moduleId));
