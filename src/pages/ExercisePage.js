@@ -164,7 +164,7 @@ function ExercisePage() {
 
     if (tempScore > 0 && !hasAlreadySolved) {
       const token = localStorage.getItem('token');
-      api.post('/user/xp/exercise',
+      api.post('/api/user/xp/exercise',
         { module_id: moduleId, gained_xp: tempScore },
         { headers: { Authorization: `Bearer ${token}` } }
       )
