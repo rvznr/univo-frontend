@@ -34,9 +34,10 @@ const Dashboard = () => {
       const res = await fetch(`${API_URL}/api/ai/recommendations`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          ...getAuthHeaders()
-        }
+           "Authorization": `Bearer ${token}`,
+           "Content-Type": "application/json"
+        },
+        body: JSON.stringify({}) 
       });
 
       const data = await res.json();
