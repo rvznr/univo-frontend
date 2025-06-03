@@ -14,7 +14,8 @@ function NotePage() {
   const [xpSent, setXpSent] = useState(false);
   const [fade, setFade] = useState(true);
 
-  const serverBaseUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const normalizeUrl = (url) => url.replace(/\/+$/, ''); // sonundaki slash'ları sil
+  const serverBaseUrl = normalizeUrl(process.env.REACT_APP_API_URL || "http://localhost:5000");
 
   useEffect(() => {
     api.get(`/api/notes/${noteId}`, {
@@ -27,23 +28,25 @@ function NotePage() {
   }, [noteId]);
 
   const handleNext = () => {
-    if (pageIndex < (note.contents?.length || 0) - 1) {
-      setFade(false);
-      setTimeout(() => {
-        setPageIndex(prev => prev + 1);
-        setFade(true);
-      }, 200);
-    } else {
+    if (!note || !note.contents || pageIndex >= note.contents.length - 1) {
       setIsCompleted(true);
       if (!xpSent) {
         api.post('/user/xp/note', { module_id: note.module_id }, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
-        }).then(() => setXpSent(true))
+        })
+          .then(() => setXpSent(true))
           .catch(err => console.error("📋 Error saving Note XP:", err));
       }
+      return;
     }
+
+    setFade(false);
+    setTimeout(() => {
+      setPageIndex(prev => prev + 1);
+      setFade(true);
+    }, 200);
   };
 
   const handlePrev = () => {
@@ -73,12 +76,11 @@ function NotePage() {
 
   let adjustedContent = currentPage.content;
   if (adjustedContent) {
-  adjustedContent = adjustedContent
-    .replace(/src="\/static\/images\//g, `src="${serverBaseUrl}/static/images/`)
-    .replace(/src="\/api\/images\/(?!by-name)/g, `src="${serverBaseUrl}/api/images/by-name/`)
-    .replace(/src="\/(?!\/)/g, `src="${serverBaseUrl}/`);
-}
-
+    adjustedContent = adjustedContent
+      .replace(/src="\/static\/images\//g, `src="${serverBaseUrl}/static/images/`)
+      .replace(/src="\/api\/images\/(?!by-name)/g, `src="${serverBaseUrl}/api/images/by-name/`)
+      .replace(/src="\/(?!\/)/g, `src="${serverBaseUrl}/`);
+  }
 
   return (
     <div className="note-layout">

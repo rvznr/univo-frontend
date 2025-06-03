@@ -3,7 +3,7 @@ import axios from 'axios';
 const token = localStorage.getItem('token');
 
 const api = axios.create({
-  baseURL: 'https://univoxacademia.online',
+  baseURL: 'https://univoxacademia.online/api',
   headers: {
     'Content-Type': 'application/json',
     ...(token && { Authorization: `Bearer ${token}` })
