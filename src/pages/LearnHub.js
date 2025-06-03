@@ -18,8 +18,8 @@ function LearnHub() {
       const token = localStorage.getItem('token');
       try {
         const [modRes, progressRes] = await Promise.all([
-        api.get('/api/modules', { headers: { Authorization: `Bearer ${token}` } }),
-        api.get('/api/user/progress/mine', { headers: { Authorization: `Bearer ${token}` } })
+        api.get('/modules', { headers: { Authorization: `Bearer ${token}` } }),
+        api.get('/user/progress/mine', { headers: { Authorization: `Bearer ${token}` } })
 
         ]);
 
@@ -58,7 +58,7 @@ function LearnHub() {
   }
 
   const handleXPPostAndGoToNote = (moduleId, noteId) => {
-    api.post('/api/user/xp/note', { module_id: moduleId })
+    api.post('/user/xp/note', { module_id: moduleId })
       .then(() => {
         setTimeout(() => {
           navigate(`/note/${noteId}`);
