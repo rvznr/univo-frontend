@@ -55,7 +55,7 @@ function LearnHub() {
   }
 
   const handleXPPostAndGoToNote = (moduleId, noteId) => {
-    api.post('/user/xp/note', { module_id: moduleId })
+    api.post('/api/user/xp/note', { module_id: moduleId })
       .then(() => {
         setTimeout(() => {
           navigate(`/note/${noteId}`);
