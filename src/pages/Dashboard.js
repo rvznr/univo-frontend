@@ -29,26 +29,27 @@ const Dashboard = () => {
 
   const API_URL = process.env.REACT_APP_API_URL;
 
-  const fetchAIRecommendations = async () => {
-    try {
-      const res = await fetch(`${API_URL}/api/ai/recommendations`, {
-        method: 'POST',
-        headers: {
-           "Authorization": `Bearer ${token}`,
-           "Content-Type": "application/json"
-        },
-        body: JSON.stringify({}) 
-      });
+const fetchAIRecommendations = async () => {
+  try {
+    const token = localStorage.getItem('token'); // ← EKLENDİ
+    const res = await fetch(`${API_URL}/api/ai/recommendations`, {
+      method: 'POST',
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({})
+    });
 
-      const data = await res.json();
-      setAiRecommendations(data.recommendations || []);
-      console.log("🧠 AI RECOMMENDATIONS:", data.recommendations);
+    const data = await res.json();
+    setAiRecommendations(data.recommendations || []);
+    console.log("🧠 AI RECOMMENDATIONS:", data.recommendations);
 
-    } catch (err) {
-      console.error('❌ AI recommendation error:', err);
-      setAiRecommendations([]);
-    }
-  };
+  } catch (err) {
+    console.error('❌ AI recommendation error:', err);
+    setAiRecommendations([]);
+  }
+};
 
   useEffect(() => {
     const token = localStorage.getItem('token');
