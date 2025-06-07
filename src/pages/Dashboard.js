@@ -31,7 +31,7 @@ const Dashboard = () => {
 
 const fetchAIRecommendations = async () => {
   try {
-    const token = localStorage.getItem('token'); // ← EKLENDİ
+    const token = localStorage.getItem('token'); 
     const res = await fetch(`${API_URL}/api/ai/recommendations`, {
       method: 'POST',
       headers: {
